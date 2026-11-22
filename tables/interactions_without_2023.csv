@@ -1,0 +1,6 @@
+,coef,ci_low,ci_high
+grid_x_post,1.17,-1.14,3.22
+driver_form3_x_post,0.2,-0.28,0.73
+driver_wins_before_x_post,-0.21,-0.47,0.03
+team_pace3_x_post,-0.2,-1.59,1.38
+post_cap,1.41,-1.16,3.96

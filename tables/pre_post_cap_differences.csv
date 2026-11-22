@@ -1,0 +1,9 @@
+model,metric,diff,ci_low,ci_high
+6 features (current),AUC,-0.002,-0.029,0.03
+6 features (current),log_loss,0.0,-0.024,0.024
+4 features (project spec),AUC,-0.002,-0.03,0.03
+4 features (project spec),log_loss,0.001,-0.024,0.023
+grid + driver form only,AUC,-0.001,-0.029,0.029
+grid + driver form only,log_loss,-0.001,-0.023,0.019
+grid only,AUC,-0.016,-0.052,0.023
+grid only,log_loss,0.01,-0.015,0.034
