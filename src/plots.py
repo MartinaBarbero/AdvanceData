@@ -190,3 +190,15 @@ def plot_team_pace_over_time(data, n_teams=4):
                  x=0.01, ha="left", fontsize=11, fontweight="bold")
     fig.tight_layout()
     return fig
+
+
+def plot_probability_ranking(prediction, title, top=10):
+    """Predicted probability of winning for the most likely drivers of one race (output of prediction.predict_race)."""
+    best = prediction.head(top).iloc[::-1]                     # most likely driver at the top
+    labels = [f"{d} ({t})" for d, t in zip(best["driver"], best["team"])]
+    fig, ax = plt.subplots(figsize=(7, 4.2))
+    ax.barh(labels, best["win_probability"] * 100, color=BLUE, height=0.65)
+    ax.set_xlabel("Predicted probability of winning (%)")
+    ax.grid(axis="y", visible=False)
+    ax.set_title(title, loc="left")
+    return fig

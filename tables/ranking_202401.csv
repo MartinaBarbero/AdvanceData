@@ -1,0 +1,21 @@
+rank,driver,driver_id,team,grid,driver_form3,driver_wins_before,team_pace3,win_probability,race_share
+1,Max Verstappen,max_verstappen,Red Bull,1,25.3333,54,0.0,0.7255,0.6716
+2,Leclerc,leclerc,Ferrari,2,12.0,5,0.5522,0.1557,0.1441
+3,Perez,perez,Red Bull,5,13.0,6,0.0,0.0594,0.055
+4,Russell,russell,Mercedes,3,6.3333,1,0.6679,0.0527,0.0488
+5,Sainz,sainz,Ferrari,4,5.3333,2,0.5522,0.0317,0.0294
+6,Alonso,alonso,Aston Martin lineage,6,7.6667,32,0.7371,0.0235,0.0217
+7,Norris,norris,McLaren,7,9.6667,0,0.5448,0.015,0.0139
+8,Hamilton,hamilton,Mercedes,9,4.0,103,0.6679,0.0083,0.0077
+9,Piastri,piastri,McLaren,8,3.3333,0,0.5448,0.0044,0.0041
+10,Stroll,stroll,Aston Martin lineage,12,7.0,0,0.7371,0.0012,0.0011
+11,Hulkenberg,hulkenberg,Haas F1 Team,10,0.0,0,1.482,0.0011,0.001
+12,Tsunoda,tsunoda,AlphaTauri lineage,11,2.0,0,1.2933,0.0009,0.0009
+13,Albon,albon,Williams,13,0.0,0,1.2946,0.0003,0.0003
+14,Ricciardo,ricciardo,AlphaTauri lineage,14,0.0,8,1.2933,0.0002,0.0002
+15,Kevin Magnussen,kevin_magnussen,Haas F1 Team,15,0.0,0,1.482,0.0001,0.0001
+16,Bottas,bottas,Sauber lineage,16,0.0,10,2.0748,0.0001,0.0001
+17,Zhou,zhou,Sauber lineage,17,0.0,0,2.0748,0.0,0.0
+18,Ocon,ocon,Renault lineage,19,4.3333,1,0.9223,0.0,0.0
+19,Sargeant,sargeant,Williams,18,0.0,0,1.2946,0.0,0.0
+20,Gasly,gasly,Renault lineage,20,2.0,1,0.9223,0.0,0.0
