@@ -237,3 +237,32 @@ def plot_pace_gap_by_group(table, top_label, other_label, cap_year=2021):
     ax.set_title("Pace gap of the strongest teams and of the rest")
     ax.legend(frameon=False)
     return fig
+
+    
+
+def plot_driver_wins_by_season(table, cap_year=2021):
+    """One small bar chart per driver: race wins in each season."""
+    from matplotlib.ticker import MaxNLocator
+
+    columns = 3
+    rows = -(-len(table) // columns)  # round up
+    fig, axes = plt.subplots(rows, columns, figsize=(11, 2.8 * rows), sharex=True, sharey=True)
+    axes = axes.ravel()
+    seasons = list(table.columns)
+
+    for ax, (name, wins) in zip(axes, table.iterrows()):
+        ax.bar(seasons, wins.values, color=BLUE, width=0.7)
+        ax.axvline(cap_year - 0.5, color="grey", linestyle="--", linewidth=1)
+        ax.set_title(name, fontsize=10, loc="left")
+        ax.set_xticks(seasons[::3])
+        ax.yaxis.set_major_locator(MaxNLocator(integer=True))
+        ax.grid(axis="y", linewidth=0.5, alpha=0.5)
+        ax.spines[["top", "right"]].set_visible(False)
+    for ax in axes[len(table):]:
+        ax.set_visible(False)
+
+    fig.supxlabel("Season")
+    fig.supylabel("Race wins in the season")
+    fig.suptitle(f"Race wins per season of the drivers with most wins, {seasons[0]} to {seasons[-1]}")
+    fig.tight_layout()
+    return fig
