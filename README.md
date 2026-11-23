@@ -15,6 +15,7 @@ pip install -r requirements.txt
 One command runs everything, in the right order:
 
 ```
+cd /files/AdvanceData
 python main.py
 ```
 
@@ -26,7 +27,7 @@ It executes the notebooks in `notebooks/` one after the other. You can also open
 | 2 | `04_model_table.ipynb` | Builds the driver-by-race table with the pre-race features |
 | 3 | `02_pace_gap_analysis.ipynb` | Team pace gap to the fastest team, strongest teams against the rest |
 | 4 | `03_exploratory_analysis.ipynb` | Winners and wins by driver and season |
-| 5 | `05_walk_forward.ipynb` | Fits the logistic regression season by season and evaluates it |
+| 5 | `05_walk_forward.ipynb` |Fits the logistic regression season by season, compares it with the pole-sitter baseline, and tests whether anything changes after 2021 (race-level bootstrap) |
 | 6 | `06_race_prediction.ipynb` | Win probabilities for all drivers of a chosen race |
 
 Code used in more than one notebook is in `src/`.
@@ -49,5 +50,5 @@ Cleaning decisions (missing values, renamed teams, minimum laps for the pace mea
 
 No absolute paths are used. The model has no random component, so a rerun gives the same numbers.
 
-## AI Disclolsure
+## AI tool disclosure
 Used Claude (Anthropic) for: debugging file path and kernel errors, code review, and drafting this README. All analysis logic and interpretation written/reviewed by the author.
