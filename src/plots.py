@@ -202,3 +202,38 @@ def plot_probability_ranking(prediction, title, top=10):
     ax.grid(axis="y", visible=False)
     ax.set_title(title, loc="left")
     return fig
+
+
+def _style_season_axis(ax, years, cap_year):
+    """Common look of the season charts: light grid, cost cap marker, one tick per season."""
+    ax.axvline(cap_year - 0.5, color="grey", linestyle="--", linewidth=1)
+    ax.set_xticks(list(years))
+    ax.set_xlabel("Season")
+    ax.grid(axis="y", linewidth=0.5, alpha=0.5)
+    ax.spines[["top", "right"]].set_visible(False)
+
+
+def plot_competitiveness_gap(table, cap_year=2021):
+    """Spread of the final team points per race, one point per season."""
+    fig, ax = plt.subplots(figsize=(8, 4.5))
+    ax.plot(table.index, table["std_per_race"], marker="o", color=BLUE, linewidth=2)
+    ax.set_ylim(0, table["std_per_race"].max() * 1.2)
+    _style_season_axis(ax, table.index, cap_year)
+    ax.text(cap_year - 0.4, ax.get_ylim()[1] * 0.97, "Cost cap from 2021",
+            color="grey", fontsize=9, va="top")
+    ax.set_ylabel("Std. dev. of final team points, per race")
+    ax.set_title("How spread out the teams are in the standings")
+    return fig
+
+
+def plot_pace_gap_by_group(table, top_label, other_label, cap_year=2021):
+    """Recent pace gap of the strongest teams against all the others, by season."""
+    fig, ax = plt.subplots(figsize=(8, 4.5))
+    ax.plot(table.index, table[top_label], marker="o", color=BLUE, linewidth=2, label=top_label)
+    ax.plot(table.index, table[other_label], marker="o", color="#eb6834", linewidth=2, label=other_label)
+    ax.set_ylim(bottom=0)
+    _style_season_axis(ax, table.index, cap_year)
+    ax.set_ylabel("Recent pace gap to the fastest team (%)")
+    ax.set_title("Pace gap of the strongest teams and of the rest")
+    ax.legend(frameon=False)
+    return fig

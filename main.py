@@ -11,10 +11,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 NOTEBOOK_DIR = ROOT / "notebooks"
 
-# Order matters: each notebook uses the files saved by the previous ones.
+# The order follows the dependencies, not the numbers: notebooks 02 and 03 read
+# the model table that notebook 04 builds, so 04 runs right after 01.
 NOTEBOOKS = [
-    "03_exploratory_analysis.ipynb",
+    "01_data_preparation.ipynb",
     "04_model_table.ipynb",
+    "02_pace_gap_analysis.ipynb",
+    "03_exploratory_analysis.ipynb",
     "05_walk_forward.ipynb",
     "06_race_prediction.ipynb",
 ]
